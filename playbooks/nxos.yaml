@@ -1,0 +1,7 @@
+---
+- hosts: nxos
+  gather_facts: no
+  tasks:
+    - cisco.nxos.nxos_command:
+        commands: show version
+
