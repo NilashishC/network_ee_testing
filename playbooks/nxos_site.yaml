@@ -24,7 +24,7 @@
 
     - name: Format integration targets
       set_fact:
-        _integration_targets: "{{ _targets.files | map(attribute='path') | list | sort }
+        _integration_targets: "{{ _targets.files | map(attribute='path') | list | sort }"
       no_log: true
 
     - name: Test targets found
