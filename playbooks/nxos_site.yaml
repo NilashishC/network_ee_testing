@@ -8,7 +8,7 @@
     collection_namespace: cisco
     collection_name: nxos
     integration_tests_path: "{{ collection_path }}/{{ collection_namespace }}/{{ collection_name }}/tests/integration/targets"
-    integration_tests_pattern: "{{ collection_name }}_*"
+    integration_tests_pattern: "nxos_command"
     integration_target_failures: []
 
   tasks:
@@ -24,7 +24,7 @@
 
     - name: Format integration targets
       set_fact:
-        _integration_targets: ios_user
+        _integration_targets: "{{ _targets.files | map(attribute='path') | list | sort }
       no_log: true
 
     - name: Test targets found
