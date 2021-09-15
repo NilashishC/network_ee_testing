@@ -1,8 +1,6 @@
 ---
 - hosts: nxos
-  module_defaults:
-    cisco.nxos.nxos_facts:
-      gather_subset: ['min']
+  gather_facts: no
   vars:
     collection_path: /usr/share/ansible/collections/ansible_collections
     collection_namespace: cisco
