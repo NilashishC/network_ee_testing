@@ -1,10 +1,10 @@
 ---
-- hosts: nxos
+- hosts: appliance
   gather_facts: no
   vars:
     collection_path: /usr/share/ansible/collections/ansible_collections
-    collection_namespace: cisco
-    collection_name: nxos
+    collection_namespace: "{{ collection_namespace }}"
+    collection_name: "{{ collection_name }}"
     integration_tests_path: "{{ collection_path }}/{{ collection_namespace }}/{{ collection_name }}/tests/integration/targets"
     integration_tests_pattern: "{{ collection_name }}_*"
     integration_target_failures: []
